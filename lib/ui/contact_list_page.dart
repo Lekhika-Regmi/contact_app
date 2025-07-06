@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 
 import '../data/contact_model.dart';
 import '../data/database_helper.dart';
+import '../services/preferences_services.dart';
 import 'add_edit_contact_page.dart';
 
 class ContactListPage extends StatefulWidget {
-  const ContactListPage({super.key});
+  final bool isDarkMode;
+  final void Function(bool) onThemeToggle;
 
+  const ContactListPage({
+    super.key,
+    required this.isDarkMode,
+    required this.onThemeToggle,
+  });
   @override
   State<ContactListPage> createState() => _ContactListPageState();
 }
@@ -14,12 +21,24 @@ class ContactListPage extends StatefulWidget {
 class _ContactListPageState extends State<ContactListPage> {
   late Future<List<Contact>> _contactsFuture;
 
-  @override
+  final _prefs = PreferencesService();
+  String _username = '';
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _refreshContactList();
+    _loadUsername();
+    _checkAndAskName();
+  }
+
+  void _loadUsername() async {
+    final name = await _prefs.getUsername();
+    if (name != null && mounted) {
+      setState(() {
+        _username = name;
+      });
+    }
   }
 
   void _refreshContactList() {
@@ -72,9 +91,39 @@ class _ContactListPageState extends State<ContactListPage> {
     }
   }
 
+  void _checkAndAskName() async {
+    final name = await _prefs.getUsername();
+    if (name == null && mounted) {
+      final enteredName = await showDialog<String>(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: const Text('Enter your name'),
+          content: TextField(
+            autofocus: true,
+            decoration: const InputDecoration(hintText: 'Your name'),
+            onSubmitted: Navigator.of(context).pop,
+          ),
+        ),
+      );
+      if (enteredName != null && enteredName.isNotEmpty) {
+        await _prefs.setUsername(enteredName);
+        setState(() {
+          _username = enteredName;
+        });
+      }
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Sqflite Contact App')),
+      appBar: AppBar(
+        title: Text(
+          _username.isNotEmpty ? 'Welcome, $_username' : 'Sqflite Contact App',
+        ),
+        actions: [
+          Switch(value: widget.isDarkMode, onChanged: widget.onThemeToggle),
+        ],
+      ),
       body: FutureBuilder<List<Contact>>(
         future: _contactsFuture,
         builder: (context, snapshot) {
@@ -83,7 +132,20 @@ class _ContactListPageState extends State<ContactListPage> {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('No contacts found. Add one!'));
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.0),
+                child: Text(
+                  'No contacts yet.\nTap the ➕ button below to add one!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            );
           } else {
             final contacts = snapshot.data!;
             return ListView.builder(

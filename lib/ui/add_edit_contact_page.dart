@@ -64,10 +64,8 @@ class _AddEditContactPageState extends State<AddEditContactPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.contact == null ? 'Add Contact' : 'Edit Contact'),
-        actions: [
-          IconButton(icon: const Icon(Icons.save), onPressed: _saveContact),
-        ],
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -119,6 +117,16 @@ class _AddEditContactPageState extends State<AddEditContactPage> {
                   }
                   return null;
                 },
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _saveContact,
+                  child: Text(
+                    widget.contact == null ? 'Add Contact' : 'Update Contact',
+                  ),
+                ),
               ),
             ],
           ),
