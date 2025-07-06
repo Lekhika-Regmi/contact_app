@@ -22,9 +22,9 @@ A simple Flutter-based contact management app that allows users to add, view, an
 |:-----------:|:--------------------------:|:---------:|
 | ![Add Contact](assets/screenshots/no_contact_yet.png) | ![Contacts](assets/screenshots/after_adding.png) | ![Dark Mode](assets/screenshots/darkmode.png) |
 
-| User Setup | Empty State | Contact Details |
-|:----------:|:-----------:|:----------------:|
-| ![User Setup](assets/screenshots/no_contact_yet.png) | ![Empty](assets/screenshots/no_contact_yet.png) | ![Details](assets/screenshots/after_adding.png) |
+|                       User Setup                        |                   Update State                   |                  Contact Details                  |
+|:-------------------------------------------------------:|:------------------------------------------------:|:-------------------------------------------------:|
+| ![User Setup](assets/screenshots/first_launch_page.png) | ![Update](assets/screenshots/update_contact.png) | ![Details](assets/screenshots/after_updating.png) |
 
 ---
 
