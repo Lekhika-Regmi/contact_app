@@ -11,6 +11,7 @@ class DatabaseHelper {
   static const columnName = 'name';
   static const columnPhone = 'phone';
   static const columnEmail = 'email';
+  static const columnIsFavorite = 'isFavorite';
 
   DatabaseHelper._privateConstructor();
   static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
@@ -40,7 +41,8 @@ class DatabaseHelper {
             $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
             $columnName TEXT NOT NULL,
             $columnPhone TEXT NOT NULL,
-            $columnEmail TEXT NOT NULL
+            $columnEmail TEXT NOT NULL,
+               $columnIsFavorite INTEGER NOT NULL DEFAULT 0
           )
       ''');
   }
@@ -50,7 +52,7 @@ class DatabaseHelper {
     return await db.insert(table, contact.toMap());
   }
 
-  Future<List<Contact>> getAllContacts() async {
+  Future<List<Contact>> getContacts() async {
     Database db = await instance.database;
     final List<Map<String, dynamic>> maps = await db.query(
       table,
@@ -80,5 +82,39 @@ class DatabaseHelper {
   Future<int> delete(int id) async {
     Database db = await instance.database;
     return await db.delete(table, where: '$columnId = ?', whereArgs: [id]);
+  }
+
+  // Get only favorite contacts
+  Future<List<Contact>> getFavorites() async {
+    Database db = await instance.database;
+    final List<Map<String, dynamic>> maps = await db.query(
+      table,
+      where: 'isFavorite = ?',
+      whereArgs: [1],
+      orderBy: "$columnName ASC",
+    );
+
+    return List.generate(maps.length, (i) => Contact.fromMap(maps[i]));
+  }
+
+  // Toggle favorite status
+  Future<void> toggleFavorite(Contact contact) async {
+    Database db = await instance.database;
+    await db.update(
+      table,
+      {'isFavorite': contact.isFavorite ? 0 : 1},
+      where: '$columnId = ?',
+      whereArgs: [contact.id],
+    );
+  }
+
+  Future<void> updateContact(Contact contact) async {
+    final db = await instance.database;
+    await db.update(
+      table,
+      contact.toMap(),
+      where: 'id = ?',
+      whereArgs: [contact.id],
+    );
   }
 }
