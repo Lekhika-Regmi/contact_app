@@ -40,21 +40,27 @@ A comprehensive Flutter-based contact management app with dialer functionality t
 
 ### Contact Management
 
-|                Contact Details (Light)                 |                Contact Details (Dark)                |                     Contact List                     |
-| :----------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: |
-| ![Contact Light](assets/screenshots/contact_light.png) | ![Contact Dark](assets/screenshots/contact_dark.png) | ![Contact List](assets/screenshots/contact_list.png) |
+|                Contact Details (Light)                 |                Contact Details (Dark)                 |                     Add Contact                     |
+| :----------------------------------------------------: | :----------------------------------------------------: | :-------------------------------------------------: |
+| ![Contact Light](assets/screenshots/detail_page_lightmode.png) | ![Contact Dark](assets/screenshots/detail_page_darkmode.png) | ![Add Contact](assets/screenshots/add_contact.png) |
 
 ### Dialer & Calling
 
 |                 Dialer (Dark Mode)                 |                 Dialer (Light Mode)                  |                Active Call                 |
-| :------------------------------------------------: | :--------------------------------------------------: | :----------------------------------------: |
-| ![Dialer Dark](assets/screenshots/dialer_dark.png) | ![Dialer Light](assets/screenshots/dialer_light.png) | ![Calling](assets/screenshots/calling.png) |
+| :------------------------------------------------: | :---------------------------------------------------: | :----------------------------------------: |
+| ![Dialer Dark](assets/screenshots/dial_darkmode.png) | ![Dialer Light](assets/screenshots/dial_lightmode.png) | ![Calling](assets/screenshots/calling_screen.png) |
 
-### User Experience
+### User Experience & Theme
 
-|                    Add Contact                     |                    User Setup                    |                    Empty State                     |
-| :------------------------------------------------: | :----------------------------------------------: | :------------------------------------------------: |
-| ![Add Contact](assets/screenshots/add_contact.png) | ![User Setup](assets/screenshots/user_setup.png) | ![No Contacts](assets/screenshots/no_contacts.png) |
+|                    Home (Dark)                     |                    Home (Light)                    |                    Landing Page                     |
+| :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
+| ![Home Dark](assets/screenshots/home_darkmode.png) | ![Home Light](assets/screenshots/home_lightmode.png) | ![Landing](assets/screenshots/landing_page.png) |
+
+### Additional Features
+
+|                    Auto Suggest                     |                    Favorites (Dark)                    |                    Favorites (Light)                     |
+| :-------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
+| ![Auto Suggest](assets/screenshots/dial_autosuggest.png) | ![Favorites Dark](assets/screenshots/fav_darkmode.png) | ![Favorites Light](assets/screenshots/fav_lightmode.png) |
 
 ---
 
