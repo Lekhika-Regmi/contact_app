@@ -40,26 +40,26 @@ A comprehensive Flutter-based contact management app with dialer functionality t
 
 ### Contact Management
 
-|                Contact Details (Light)                 |                Contact Details (Dark)                 |                     Add Contact                     |
-| :----------------------------------------------------: | :----------------------------------------------------: | :-------------------------------------------------: |
+|                    Contact Details (Light)                     |                    Contact Details (Dark)                    |                    Add Contact                     |
+| :------------------------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------------: |
 | ![Contact Light](assets/screenshots/detail_page_lightmode.png) | ![Contact Dark](assets/screenshots/detail_page_darkmode.png) | ![Add Contact](assets/screenshots/add_contact.png) |
 
 ### Dialer & Calling
 
-|                 Dialer (Dark Mode)                 |                 Dialer (Light Mode)                  |                Active Call                 |
-| :------------------------------------------------: | :---------------------------------------------------: | :----------------------------------------: |
-| ![Dialer Dark](assets/screenshots/dial_darkmode.png) | ![Dialer Light](assets/screenshots/dial_lightmode.png) | ![Calling](assets/screenshots/calling_screen.png) |
+|                  Dialer (Dark Mode)                  |                   Dialer (Light Mode)                    |                    Active Call                    |
+| :--------------------------------------------------: | :------------------------------------------------------: | :-----------------------------------------------: |
+| ![Dialer Dark](assets/screenshots/darkmode_dial.png) | ![Dialer Light](assets/screenshots/dial_autosuggest.png) | ![Calling](assets/screenshots/calling_screen.png) |
 
 ### User Experience & Theme
 
-|                    Home (Dark)                     |                    Home (Light)                    |                    Landing Page                     |
-| :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
+|                    Home (Dark)                     |                     Home (Light)                     |                  Landing Page                   |
+| :------------------------------------------------: | :--------------------------------------------------: | :---------------------------------------------: |
 | ![Home Dark](assets/screenshots/home_darkmode.png) | ![Home Light](assets/screenshots/home_lightmode.png) | ![Landing](assets/screenshots/landing_page.png) |
 
 ### Additional Features
 
-|                    Auto Suggest                     |                    Favorites (Dark)                    |                    Favorites (Light)                     |
-| :-------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
+|                       Auto Suggest                       |                    Favorites (Dark)                    |                    Favorites (Light)                     |
+| :------------------------------------------------------: | :----------------------------------------------------: | :------------------------------------------------------: |
 | ![Auto Suggest](assets/screenshots/dial_autosuggest.png) | ![Favorites Dark](assets/screenshots/fav_darkmode.png) | ![Favorites Light](assets/screenshots/fav_lightmode.png) |
 
 ---
@@ -117,6 +117,5 @@ The app features three main tabs:
 3. **⭐ Favorites Tab** - Quick access to favorite contacts
 
 ---
-
 
 _Made with ❤️ using Flutter_
