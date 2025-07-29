@@ -38,11 +38,11 @@ A comprehensive Flutter-based contact management app with dialer functionality t
 
 ## 📸 Screenshots
 
-### Contact Management
+### User Experience & Theme
 
-|                    Contact Details (Light)                     |                    Contact Details (Dark)                    |                    Add Contact                     |
-| :------------------------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------------: |
-| ![Contact Light](assets/screenshots/detail_page_lightmode.png) | ![Contact Dark](assets/screenshots/detail_page_darkmode.png) | ![Add Contact](assets/screenshots/add_contact.png) |
+|                    Home (Dark)                     |                     Home (Light)                     |                  Landing Page                   |
+| :------------------------------------------------: | :--------------------------------------------------: | :---------------------------------------------: |
+| ![Home Dark](assets/screenshots/home_darkmode.png) | ![Home Light](assets/screenshots/home_lightmode.png) | ![Landing](assets/screenshots/landing_page.png) |
 
 ### Dialer & Calling
 
@@ -50,11 +50,11 @@ A comprehensive Flutter-based contact management app with dialer functionality t
 | :--------------------------------------------------: | :------------------------------------------------------: | :-----------------------------------------------: |
 | ![Dialer Dark](assets/screenshots/darkmode_dial.png) | ![Dialer Light](assets/screenshots/dial_autosuggest.png) | ![Calling](assets/screenshots/calling_screen.png) |
 
-### User Experience & Theme
+### Contact Management
 
-|                    Home (Dark)                     |                     Home (Light)                     |                  Landing Page                   |
-| :------------------------------------------------: | :--------------------------------------------------: | :---------------------------------------------: |
-| ![Home Dark](assets/screenshots/home_darkmode.png) | ![Home Light](assets/screenshots/home_lightmode.png) | ![Landing](assets/screenshots/landing_page.png) |
+|                    Contact Details (Light)                     |                    Contact Details (Dark)                    |                    Add Contact                     |
+| :------------------------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------------: |
+| ![Contact Light](assets/screenshots/detail_page_lightmode.png) | ![Contact Dark](assets/screenshots/detail_page_darkmode.png) | ![Add Contact](assets/screenshots/add_contact.png) |
 
 ### Additional Features
 
